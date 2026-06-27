@@ -119,6 +119,12 @@
       pointer-events: none;
     }
 
+    .hero-sign {
+      width: clamp(210px, 32vw, 290px);
+      height: auto;
+      margin-bottom: 36px;
+    }
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -511,6 +517,21 @@
 
 <!-- HERO -->
 <section class="hero">
+  <svg class="hero-sign" viewBox="0 0 360 360" role="img" aria-label="Danger Hauling Co. logo">
+    <defs>
+      <filter id="signShadow" x="-25%" y="-25%" width="150%" height="160%">
+        <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000" flood-opacity="0.6"/>
+      </filter>
+    </defs>
+    <g filter="url(#signShadow)">
+      <rect x="10" y="10" width="340" height="340" rx="6" fill="#0f0f0f" stroke="#3a3a3a" stroke-width="2"/>
+      <rect x="22" y="22" width="316" height="148" fill="#CC0000"/>
+      <text x="180" y="124" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="72" letter-spacing="1" fill="#EDE6D8">DANGER</text>
+      <text x="180" y="242" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="42" letter-spacing="1" fill="#EDE6D8">HAULING CO.</text>
+      <line x1="72" y1="270" x2="288" y2="270" stroke="#555" stroke-width="2"/>
+      <text x="180" y="306" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="22" letter-spacing="1" fill="#9a9a9a">(720) 266-0185</text>
+    </g>
+  </svg>
   <div class="hero-badge">Serving Englewood &amp; Denver, CO</div>
   <h1>We Haul<span>The Danger Away.</span></h1>
   <p class="hero-sub">Fast, affordable junk removal for homes and businesses in the Denver metro area. No job too small.</p>
