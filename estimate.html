@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get a Free Estimate | Danger Hauling Co. — Englewood & Denver, CO</title>
+  <meta name="description" content="Request a free junk removal estimate from Danger Hauling Co. Tell us what you need hauled and we'll get right back to you with a price."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0f0f0f;
+      --red: #CC0000;
+      --red-dark: #990000;
+      --white: #ffffff;
+      --grey: #1a1a1a;
+      --grey-mid: #2a2a2a;
+      --text-muted: #aaaaaa;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Arial Black', Arial, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.96);
+      border-bottom: 3px solid var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 68px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .nav-triangle { width: 42px; height: 38px; flex-shrink: 0; }
+    .nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+    .nav-wordmark span:first-child { font-size: 20px; font-weight: 900; color: var(--white); letter-spacing: 1px; }
+    .nav-wordmark span:last-child { font-size: 11px; font-weight: 700; color: var(--red); letter-spacing: 3px; margin-top: 2px; }
+    .nav-cta {
+      background: transparent;
+      color: var(--white);
+      font-family: 'Arial Black', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      padding: 10px 24px;
+      text-decoration: none;
+      text-transform: uppercase;
+      border: 2px solid var(--grey-mid);
+      transition: border-color 0.2s;
+    }
+    .nav-cta:hover { border-color: var(--white); }
+
+    /* ── HEADER ── */
+    .est-header {
+      padding: 130px 24px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .est-header::before {
+      content: '';
+      position: absolute;
+      top: -20%; right: -5%;
+      width: 55%; height: 160%;
+      background: var(--red);
+      transform: skewX(-8deg);
+      opacity: 0.07;
+      pointer-events: none;
+    }
+    .est-badge {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      margin-bottom: 28px;
+    }
+    .est-header h1 {
+      font-size: clamp(40px, 7vw, 76px);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+    }
+    .est-header h1 span { color: var(--red); }
+    .est-header p {
+      font-family: Arial, sans-serif;
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 22px auto 0;
+    }
+
+    /* ── LAYOUT ── */
+    .est-wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 40px 24px 100px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ── FORM ── */
+    .est-form { display: grid; gap: 20px; }
+    .field { display: grid; gap: 8px; }
+    .field label {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .field label .req { color: var(--red); }
+    .est-form input,
+    .est-form select,
+    .est-form textarea {
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      background: var(--grey);
+      border: 2px solid var(--grey-mid);
+      color: var(--white);
+      padding: 14px 16px;
+      width: 100%;
+      transition: border-color 0.2s;
+    }
+    .est-form input:focus,
+    .est-form select:focus,
+    .est-form textarea:focus { outline: none; border-color: var(--red); }
+    .est-form textarea { resize: vertical; min-height: 120px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    .submit-btn {
+      background: var(--red);
+      color: var(--white);
+      font-family: 'Arial Black', Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 18px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 6px;
+    }
+    .submit-btn:hover { background: var(--red-dark); transform: translateY(-2px); }
+    .submit-btn:disabled { opacity: 0.6; cursor: default; transform: none; }
+
+    .form-note {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: #666;
+      text-align: center;
+    }
+
+    .form-msg {
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      padding: 18px 20px;
+      border-left: 4px solid var(--red);
+      background: var(--grey);
+      display: none;
+    }
+    .form-msg.show { display: block; }
+    .form-msg.success { border-color: #2ecc71; }
+    .form-msg strong { color: var(--white); }
+
+    /* ── SIDEBAR ── */
+    .est-side {
+      background: var(--grey);
+      border-top: 4px solid var(--red);
+      padding: 36px 32px;
+    }
+    .est-side h3 {
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .est-side p {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 26px;
+    }
+    .side-contact { display: block; text-decoration: none; margin-bottom: 22px; }
+    .side-contact .label {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .side-contact .value {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: 1px;
+      margin-top: 4px;
+      transition: color 0.2s;
+    }
+    .side-contact:hover .value { color: var(--red); }
+    .side-book {
+      display: inline-block;
+      margin-top: 6px;
+      background: transparent;
+      border: 2px solid var(--grey-mid);
+      color: var(--white);
+      font-family: 'Arial Black', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 13px 22px;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .side-book:hover { border-color: var(--white); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080808;
+      border-top: 3px solid var(--red);
+      padding: 50px 40px;
+      text-align: center;
+    }
+    .footer-logo { font-size: 24px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+    .footer-logo span { color: var(--red); }
+    .footer-copy {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      color: #444;
+      margin-top: 24px;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 760px) {
+      nav { padding: 0 20px; }
+      .est-wrap { grid-template-columns: 1fr; gap: 32px; padding: 30px 20px 70px; }
+      .field-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg class="nav-triangle" viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="100,8 196,172 4,172" fill="#CC0000"/>
+      <polygon points="100,42 172,162 28,162" fill="#0f0f0f"/>
+      <rect x="88" y="72" width="24" height="58" rx="8" fill="#CC0000"/>
+      <circle cx="100" cy="148" r="13" fill="#CC0000"/>
+    </svg>
+    <div class="nav-wordmark">
+      <span>DANGER</span>
+      <span>HAULING CO</span>
+    </div>
+  </a>
+  <a href="index.html" class="nav-cta">← Back to Site</a>
+</nav>
+
+<!-- HEADER -->
+<header class="est-header">
+  <div class="est-badge">Free · No Obligation</div>
+  <h1>Get a <span>Free Estimate</span></h1>
+  <p>Tell us what needs hauling and we'll get right back to you with a price. The more detail, the faster your quote.</p>
+</header>
+
+<!-- BODY -->
+<div class="est-wrap">
+  <!-- FORM -->
+  <form class="est-form" id="estimateForm">
+    <input type="hidden" name="_subject" value="New Estimate Request — Danger Hauling Co.">
+
+    <div class="field-row">
+      <div class="field">
+        <label for="name">Name <span class="req">*</span></label>
+        <input type="text" id="name" name="name" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="phone">Phone <span class="req">*</span></label>
+        <input type="tel" id="phone" name="phone" required autocomplete="tel">
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="zip">Address or Zip <span class="req">*</span></label>
+        <input type="text" id="zip" name="address" required placeholder="Where's the pickup?">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="service">What needs hauling? <span class="req">*</span></label>
+      <select id="service" name="service" required>
+        <option value="" disabled selected>Select a service…</option>
+        <option>Furniture</option>
+        <option>Appliances</option>
+        <option>Garage / Basement Cleanout</option>
+        <option>Yard Waste</option>
+        <option>Construction Debris</option>
+        <option>General Junk</option>
+        <option>Estate / Move-Out Cleanout</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="details">Details</label>
+      <textarea id="details" name="details" placeholder="e.g. Old sectional couch, a fridge, and about 10 boxes in the garage. Ground floor, easy access."></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn" id="submitBtn">Request My Free Estimate</button>
+    <p class="form-note">Fastest quotes: text photos of your items to (720) 266-0185.</p>
+
+    <div class="form-msg" id="formMsg"></div>
+  </form>
+
+  <!-- SIDEBAR -->
+  <aside class="est-side">
+    <h3>Prefer to Talk?</h3>
+    <p>Call or text us directly — send a few photos and we'll quote you on the spot.</p>
+
+    <a href="tel:7202660185" class="side-contact">
+      <span class="label">Call or Text</span>
+      <span class="value">(720) 266-0185</span>
+    </a>
+
+    <a href="index.html#booking" class="side-book">Book a Pickup →</a>
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">DANGER <span>HAULING CO.</span></div>
+  <p class="footer-copy">© 2026 DANGER HAULING CO. — ENGLEWOOD &amp; DENVER, CO</p>
+</footer>
+
+<script>
+  // Set this to your Formspree form ID (e.g. "xayzwqlr") to activate email delivery.
+  // Until it's set, the form falls back to prompting a call/text so the page is never broken.
+  var FORMSPREE_ID = "YOUR_FORMSPREE_ID";
+
+  var form = document.getElementById('estimateForm');
+  var btn = document.getElementById('submitBtn');
+  var msg = document.getElementById('formMsg');
+
+  function showMsg(html, success) {
+    msg.innerHTML = html;
+    msg.classList.add('show');
+    msg.classList.toggle('success', !!success);
+    msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Fallback until Formspree is connected.
+    if (FORMSPREE_ID === "YOUR_FORMSPREE_ID") {
+      showMsg('Online estimates aren’t switched on yet — the fastest way to get a quote is to ' +
+              'call or text <strong>(720) 266-0185</strong> with a few photos of your items.', false);
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function (res) {
+      if (res.ok) {
+        form.reset();
+        showMsg('<strong>Got it!</strong> Your estimate request is in. We’ll text or call you ' +
+                'shortly with a price. Need it sooner? Call <strong>(720) 266-0185</strong>.', true);
+      } else {
+        showMsg('Something went wrong sending your request. Please call or text ' +
+                '<strong>(720) 266-0185</strong> and we’ll get you a quote.', false);
+      }
+    })
+    .catch(function () {
+      showMsg('Couldn’t reach the server. Please call or text ' +
+              '<strong>(720) 266-0185</strong> for your estimate.', false);
+    })
+    .finally(function () {
+      btn.disabled = false;
+      btn.textContent = 'Request My Free Estimate';
+    });
+  });
+</script>
+
+</body>
+</html>

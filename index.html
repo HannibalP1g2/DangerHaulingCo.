@@ -92,6 +92,19 @@
 
     .nav-cta:hover { background: var(--red-dark); }
 
+    .nav-actions { display: flex; align-items: center; gap: 18px; }
+    .nav-est {
+      font-family: 'Arial Black', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-est:hover { color: var(--red); }
+
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
@@ -529,6 +542,7 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       nav { padding: 0 20px; }
+      .nav-est { display: none; }
       .what, .how { padding: 70px 20px; }
       .why { padding: 70px 20px; }
       .booking { padding: 70px 20px; }
@@ -552,7 +566,10 @@
       <span>HAULING CO</span>
     </div>
   </a>
-  <a href="#booking" class="nav-cta">Book Now</a>
+  <div class="nav-actions">
+    <a href="estimate.html" class="nav-est">Free Estimate</a>
+    <a href="#booking" class="nav-cta">Book Now</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -577,6 +594,7 @@
   <p class="hero-sub">Fast, affordable junk removal for homes and businesses in the Denver metro area. No job too small.</p>
   <div class="hero-actions">
     <a href="#booking" class="btn-primary">Book a Pickup</a>
+    <a href="estimate.html" class="btn-secondary">Free Estimate</a>
     <a href="tel:7202660185" class="btn-secondary">(720) 266-0185</a>
   </div>
 </section>
