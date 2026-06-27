@@ -445,6 +445,76 @@
       font-weight: 700;
     }
 
+    /* ── WHY US ── */
+    .why { background: var(--grey); padding: 100px 40px; }
+    .why-inner { max-width: 1100px; margin: 0 auto; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 2px;
+      margin-top: 60px;
+    }
+    .why-card {
+      background: var(--black);
+      padding: 44px 30px;
+      border-top: 4px solid var(--red);
+      transition: transform 0.2s;
+    }
+    .why-card:hover { transform: translateY(-5px); }
+    .why-ico {
+      width: 52px; height: 52px;
+      background: var(--red);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+    .why-ico svg { width: 26px; height: 26px; }
+    .why-card h3 {
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .why-card p {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── REVIEWS ── */
+    .reviews { padding: 100px 40px; max-width: 1100px; margin: 0 auto; }
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .review-card {
+      background: var(--grey);
+      padding: 36px 32px;
+      border-left: 4px solid var(--red);
+    }
+    .stars { color: var(--red); font-size: 18px; letter-spacing: 4px; margin-bottom: 18px; }
+    .review-text {
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      color: #d8d8d8;
+      line-height: 1.7;
+      font-style: italic;
+    }
+    .review-author {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-top: 20px;
+      letter-spacing: 1px;
+    }
+
     /* ── FOOTER ── */
     footer {
       background: #080808;
@@ -489,8 +559,8 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       nav { padding: 0 20px; }
-      .what, .how { padding: 70px 20px; }
-      .pricing { padding: 70px 20px; }
+      .what, .how, .reviews { padding: 70px 20px; }
+      .why { padding: 70px 20px; }
       .booking { padding: 70px 20px; }
       footer { padding: 40px 20px; }
     }
@@ -583,31 +653,39 @@
 
 <div class="red-divider"></div>
 
-<!-- PRICING -->
-<section class="pricing">
-  <div class="pricing-inner">
-    <p class="section-label">Transparent Pricing</p>
-    <h2 class="section-title">No Hidden Fees</h2>
-    <div class="price-grid">
-      <div class="price-card">
-        <p class="price-label">Minimum Load</p>
-        <div class="price-amount"><sup>$</sup>75<sub>+</sub></div>
-        <p class="price-desc">A few small items. Single-item pickups, small piles, quick cleanups.</p>
+<!-- WHY US -->
+<section class="why">
+  <div class="why-inner">
+    <p class="section-label">Why Danger Hauling</p>
+    <h2 class="section-title">Done Fast. Done Right.</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-ico">
+          <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+        </span>
+        <h3>Same-Day Service</h3>
+        <p>Book in the morning, junk gone by afternoon. We keep crews on standby across the metro.</p>
       </div>
-      <div class="price-card">
-        <p class="price-label">Quarter Load</p>
-        <div class="price-amount"><sup>$</sup>100<sub>+</sub></div>
-        <p class="price-desc">A few pieces of furniture or a handful of bags and boxes.</p>
+      <div class="why-card">
+        <span class="why-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        </span>
+        <h3>Licensed &amp; Insured</h3>
+        <p>Fully covered, professional crews. Your home and property are protected, every job.</p>
       </div>
-      <div class="price-card featured">
-        <p class="price-label">Half Load</p>
-        <div class="price-amount"><sup>$</sup>175<sub>+</sub></div>
-        <p class="price-desc">A full room's worth of junk, several appliances, or a partial cleanout.</p>
+      <div class="why-card">
+        <span class="why-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 12.5L12 21l-9-9V3h9z"/><circle cx="7.5" cy="7.5" r="1.4"/></svg>
+        </span>
+        <h3>Upfront Pricing</h3>
+        <p>A firm price before we lift a thing. No surprises, no hidden dump or fuel fees.</p>
       </div>
-      <div class="price-card">
-        <p class="price-label">Full Load</p>
-        <div class="price-amount"><sup>$</sup>350<sub>+</sub></div>
-        <p class="price-desc">Full garage, basement, or estate cleanout. Truck packed to capacity.</p>
+      <div class="why-card">
+        <span class="why-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+        </span>
+        <h3>Locally Owned</h3>
+        <p>A Denver-based crew that treats your neighborhood like home — because it is.</p>
       </div>
     </div>
   </div>
@@ -634,6 +712,31 @@
       <span class="step-num">3</span>
       <h3>It's Gone</h3>
       <p>We load it up, haul it away, and leave the space clean. You're done.</p>
+    </div>
+  </div>
+</section>
+
+<div class="red-divider"></div>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <p class="section-label">Real Customers</p>
+  <h2 class="section-title">Denver Trusts Us</h2>
+  <div class="review-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Showed up the same day and cleared out my whole garage in under an hour. Fair price, super friendly crew. Couldn't believe how easy it was."</p>
+      <p class="review-author">— Marcus T., Englewood</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Had an old fridge and a couch I couldn't move myself. They handled everything, swept up after, and the price was exactly what they quoted."</p>
+      <p class="review-author">— Dana R., Denver</p>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Used them for a full basement cleanout. On time, professional, and no surprise fees. I'll be calling Danger Hauling for every job from now on."</p>
+      <p class="review-author">— Steve K., Littleton</p>
     </div>
   </div>
 </section>
