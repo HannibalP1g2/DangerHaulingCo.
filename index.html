@@ -134,8 +134,12 @@
     }
 
     .hero-badge::before {
-      content: '⚠';
-      font-size: 13px;
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 11px solid var(--white);
     }
 
     .hero h1 {
