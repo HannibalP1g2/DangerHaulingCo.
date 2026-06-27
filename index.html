@@ -1,1 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danger Hauling Co. — Heavy Hauling &amp; Junk Removal Done Right</title>
+  <meta name="description" content="Danger Hauling Co. — fast, reliable junk removal, debris hauling, and cleanouts. Fully insured. Same-day service available. Get a free quote today." />
+  <style>
+    :root {
+      --black: #0d0d0d;
+      --ink: #181818;
+      --steel: #1f1f22;
+      --hazard: #ffd400;
+      --hazard-dark: #e0b800;
+      --red: #e63522;
+      --paper: #f4f1ea;
+      --muted: #a9a9a9;
+      --line: rgba(255, 255, 255, 0.08);
+      --maxw: 1120px;
+    }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--black);
+      color: var(--paper);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    .hazard-bar {
+      height: 14px;
+      background: repeating-linear-gradient(
+        45deg,
+        var(--hazard) 0 28px,
+        var(--black) 28px 56px
+      );
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(13, 13, 13, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.01em; }
+    .brand .mark {
+      width: 38px; height: 38px;
+      display: grid; place-items: center;
+      background: var(--hazard);
+      color: var(--black);
+      border-radius: 6px;
+      font-size: 22px;
+      transform: rotate(-6deg);
+    }
+    .brand span.co { color: var(--hazard); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 0.9rem; font-weight: 600; color: var(--muted); transition: color 0.15s; text-transform: uppercase; letter-spacing: 0.03em; }
+    .nav-links a:hover { color: var(--paper); }
+    .btn {
+      display: inline-block;
+      background: var(--hazard);
+      color: var(--black);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 13px 22px;
+      border-radius: 6px;
+      border: 2px solid var(--hazard);
+      cursor: pointer;
+      transition: transform 0.12s, background 0.15s;
+      font-size: 0.9rem;
+    }
+    .btn:hover { background: var(--hazard-dark); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--hazard); }
+    .btn-outline:hover { background: var(--hazard); color: var(--black); }
+    .nav .btn { padding: 11px 20px; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      padding: 110px 0 90px;
+      background:
+        radial-gradient(900px 500px at 80% -10%, rgba(255, 212, 0, 0.12), transparent 60%),
+        linear-gradient(180deg, #111 0%, var(--black) 100%);
+      overflow: hidden;
+    }
+    .hero .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--hazard);
+      border: 1px solid rgba(255, 212, 0, 0.4);
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .hero h1 { font-size: clamp(2.6rem, 6vw, 4.8rem); }
+    .hero h1 .hl { color: var(--hazard); }
+    .hero p.lead {
+      font-size: 1.2rem;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 22px 0 34px;
+      text-transform: none;
+      line-height: 1.55;
+    }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-stats {
+      display: flex;
+      gap: 44px;
+      margin-top: 56px;
+      flex-wrap: wrap;
+    }
+    .hero-stats .stat .n { font-size: 2.3rem; font-weight: 900; color: var(--hazard); }
+    .hero-stats .stat .l { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+
+    /* ---------- Sections ---------- */
+    section { padding: 90px 0; }
+    .eyebrow { color: var(--hazard); font-weight: 800; letter-spacing: 0.16em; font-size: 0.8rem; text-transform: uppercase; }
+    .section-head { max-width: 640px; margin-bottom: 52px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 12px 0 14px; }
+    .section-head p { color: var(--muted); text-transform: none; font-size: 1.05rem; }
+
+    /* ---------- Services ---------- */
+    .services { background: var(--ink); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .card {
+      background: var(--steel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 30px 26px;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .card:hover { transform: translateY(-4px); border-color: rgba(255, 212, 0, 0.5); }
+    .card .ico { font-size: 30px; margin-bottom: 14px; }
+    .card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+    .card p { color: var(--muted); text-transform: none; font-size: 0.96rem; }
+
+    /* ---------- Steps ---------- */
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .step { position: relative; padding-top: 14px; }
+    .step .num {
+      font-size: 3rem; font-weight: 900; color: rgba(255, 212, 0, 0.25);
+      line-height: 1; margin-bottom: 8px;
+    }
+    .step h3 { font-size: 1.15rem; margin-bottom: 6px; }
+    .step p { color: var(--muted); text-transform: none; }
+
+    /* ---------- Why ---------- */
+    .why { background: var(--ink); }
+    .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 40px; }
+    .why-item { display: flex; gap: 14px; align-items: flex-start; }
+    .why-item .check {
+      flex: none; width: 30px; height: 30px; border-radius: 6px;
+      background: var(--hazard); color: var(--black);
+      display: grid; place-items: center; font-weight: 900;
+    }
+    .why-item h3 { font-size: 1.05rem; margin-bottom: 2px; }
+    .why-item p { color: var(--muted); text-transform: none; font-size: 0.95rem; }
+
+    /* ---------- Quote / CTA ---------- */
+    .quote {
+      background:
+        repeating-linear-gradient(45deg, rgba(255,212,0,0.06) 0 30px, transparent 30px 60px),
+        var(--black);
+    }
+    .quote-card {
+      background: var(--steel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 46px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 46px;
+      align-items: center;
+    }
+    .quote-card h2 { font-size: 2.2rem; margin-bottom: 12px; }
+    .quote-card p { color: var(--muted); text-transform: none; margin-bottom: 20px; }
+    .contact-line { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-weight: 600; }
+    .contact-line .ico { color: var(--hazard); font-size: 1.2rem; width: 24px; }
+    form { display: grid; gap: 14px; }
+    form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    input, select, textarea {
+      width: 100%;
+      background: var(--black);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 13px 14px;
+      color: var(--paper);
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--hazard); }
+    label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: -8px; display: block; }
+    textarea { resize: vertical; min-height: 84px; }
+    form .btn { width: 100%; margin-top: 6px; }
+
+    /* ---------- Footer ---------- */
+    footer { background: var(--ink); padding: 56px 0 30px; border-top: 1px solid var(--line); }
+    .foot-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 36px; }
+    .foot-brand { max-width: 320px; }
+    .foot-brand p { color: var(--muted); text-transform: none; margin-top: 12px; font-size: 0.95rem; }
+    .foot-col h4 { font-size: 0.85rem; letter-spacing: 0.08em; margin-bottom: 14px; color: var(--hazard); }
+    .foot-col a, .foot-col p { display: block; color: var(--muted); font-size: 0.92rem; margin-bottom: 8px; text-transform: none; }
+    .foot-col a:hover { color: var(--paper); }
+    .foot-bottom { border-top: 1px solid var(--line); padding-top: 22px; color: var(--muted); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; text-transform: none; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .grid, .steps-grid, .why-grid { grid-template-columns: 1fr; }
+      .quote-card { grid-template-columns: 1fr; padding: 32px 24px; }
+      .hero { padding: 70px 0 60px; }
+      .hero-stats { gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hazard-bar"></div>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <span class="mark">⚠</span>
+        Danger&nbsp;Hauling&nbsp;<span class="co">Co.</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#how">How It Works</a>
+        <a href="#why">Why Us</a>
+        <a href="#quote">Get a Quote</a>
+      </nav>
+      <a class="btn" href="#quote">Free Quote</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="tag">Fully Insured · Same-Day Service</span>
+        <h1>We Haul the Stuff<br /><span class="hl">Nobody Else Will.</span></h1>
+        <p class="lead">
+          From garage cleanouts to heavy construction debris, Danger Hauling Co.
+          shows up on time, loads it all, and leaves the place spotless. No job
+          too big, too heavy, or too messy.
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="#quote">Get Your Free Quote</a>
+          <a class="btn btn-outline" href="tel:+15555550199">Call (555) 555-0199</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><div class="n">1,200+</div><div class="l">Loads Hauled</div></div>
+          <div class="stat"><div class="n">4.9★</div><div class="l">Customer Rating</div></div>
+          <div class="stat"><div class="n">24/7</div><div class="l">Booking Available</div></div>
+          <div class="stat"><div class="n">100%</div><div class="l">Licensed &amp; Insured</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">What We Do</span>
+          <h2>Hauling for Every Mess</h2>
+          <p>One crew, one truck, every kind of haul. If it needs to go, we'll make it disappear.</p>
+        </div>
+        <div class="grid">
+          <div class="card"><div class="ico">🛋️</div><h3>Junk Removal</h3><p>Furniture, appliances, mattresses, and everyday clutter cleared out fast.</p></div>
+          <div class="card"><div class="ico">🏗️</div><h3>Construction Debris</h3><p>Drywall, lumber, concrete, and renovation waste hauled off your site.</p></div>
+          <div class="card"><div class="ico">🏚️</div><h3>Estate &amp; Cleanouts</h3><p>Full property, garage, basement, and storage-unit cleanouts handled with care.</p></div>
+          <div class="card"><div class="ico">🌳</div><h3>Yard &amp; Storm Debris</h3><p>Branches, brush, fencing, and post-storm wreckage cleared and disposed.</p></div>
+          <div class="card"><div class="ico">📦</div><h3>Appliance Removal</h3><p>Fridges, washers, water heaters, and heavy items safely removed and recycled.</p></div>
+          <div class="card"><div class="ico">♻️</div><h3>Responsible Disposal</h3><p>We donate and recycle whatever we can — landfill is always the last resort.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Dead Simple</span>
+          <h2>How It Works</h2>
+          <p>Three steps from cluttered to clear. No quotes that change, no surprise fees.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step"><div class="num">01</div><h3>Tell Us What You've Got</h3><p>Call, text, or fill out the form with a quick description or photos of the haul.</p></div>
+          <div class="step"><div class="num">02</div><h3>Lock In Your Price</h3><p>You get an upfront, all-in quote and a time window that works for you.</p></div>
+          <div class="step"><div class="num">03</div><h3>We Haul It Away</h3><p>Our crew loads everything, sweeps up, and you only pay when it's done.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why" id="why">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Why Danger Hauling</span>
+          <h2>Built to Show Up &amp; Get It Done</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-item"><div class="check">✓</div><div><h3>Upfront, Honest Pricing</h3><p>The quote is the price. No hidden dump fees or day-of surprises.</p></div></div>
+          <div class="why-item"><div class="check">✓</div><div><h3>Licensed &amp; Fully Insured</h3><p>Your property is protected from the moment we pull up.</p></div></div>
+          <div class="why-item"><div class="check">✓</div><div><h3>Same-Day &amp; Next-Day Slots</h3><p>Need it gone now? We keep crews on standby for fast turnarounds.</p></div></div>
+          <div class="why-item"><div class="check">✓</div><div><h3>We Do the Heavy Lifting</h3><p>You point, we carry. No need to drag anything to the curb.</p></div></div>
+          <div class="why-item"><div class="check">✓</div><div><h3>Eco-Friendly Disposal</h3><p>We sort for donation and recycling before anything hits the landfill.</p></div></div>
+          <div class="why-item"><div class="check">✓</div><div><h3>Friendly, Vetted Crew</h3><p>Background-checked pros who treat your home like their own.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="quote" id="quote">
+      <div class="wrap">
+        <div class="quote-card">
+          <div>
+            <span class="eyebrow">Free · No Obligation</span>
+            <h2>Get Your Quote</h2>
+            <p>Tell us what needs hauling and we'll get right back to you with an all-in price.</p>
+            <div class="contact-line"><span class="ico">📞</span><a href="tel:+15555550199">(555) 555-0199</a></div>
+            <div class="contact-line"><span class="ico">✉️</span><a href="mailto:dispatch@dangerhauling.co">dispatch@dangerhauling.co</a></div>
+            <div class="contact-line"><span class="ico">📍</span><span>Serving the Greater Metro Area</span></div>
+            <div class="contact-line"><span class="ico">🕒</span><span>Mon–Sat 7am–7pm · Booking 24/7</span></div>
+          </div>
+          <form action="mailto:dispatch@dangerhauling.co" method="post" enctype="text/plain">
+            <div class="row">
+              <div><label for="name">Name</label><input id="name" name="Name" type="text" placeholder="Jane Doe" required /></div>
+              <div><label for="phone">Phone</label><input id="phone" name="Phone" type="tel" placeholder="(555) 555-0123" required /></div>
+            </div>
+            <div>
+              <label for="service">Service Needed</label>
+              <select id="service" name="Service">
+                <option>Junk Removal</option>
+                <option>Construction Debris</option>
+                <option>Estate / Cleanout</option>
+                <option>Yard / Storm Debris</option>
+                <option>Appliance Removal</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="details">What needs hauling?</label>
+              <textarea id="details" name="Details" placeholder="e.g. Garage cleanout — old couch, 2 dressers, boxes, a fridge..."></textarea>
+            </div>
+            <button class="btn" type="submit">Request My Free Quote</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="#top"><span class="mark">⚠</span>Danger&nbsp;Hauling&nbsp;<span class="co">Co.</span></a>
+          <p>Heavy hauling, junk removal, and cleanouts done fast, fair, and clean. Licensed and fully insured.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Services</h4>
+          <a href="#services">Junk Removal</a>
+          <a href="#services">Construction Debris</a>
+          <a href="#services">Estate Cleanouts</a>
+          <a href="#services">Appliance Removal</a>
+        </div>
+        <div class="foot-col">
+          <h4>Company</h4>
+          <a href="#how">How It Works</a>
+          <a href="#why">Why Us</a>
+          <a href="#quote">Get a Quote</a>
+        </div>
+        <div class="foot-col">
+          <h4>Contact</h4>
+          <a href="tel:+15555550199">(555) 555-0199</a>
+          <a href="mailto:dispatch@dangerhauling.co">dispatch@dangerhauling.co</a>
+          <p>Serving the Greater Metro Area</p>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Danger Hauling Co. All rights reserved.</span>
+        <span>Licensed &amp; Insured · Free Estimates</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="hazard-bar"></div>
+</body>
+</html>
